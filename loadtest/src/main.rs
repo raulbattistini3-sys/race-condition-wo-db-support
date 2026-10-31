@@ -21,7 +21,7 @@ const SETUP_CONCURRENCY: usize = 32;
 const CONFIRMED_SEATS: usize = 20;
 const WATCHDOG: Duration = Duration::from_secs(120);
 const GREEDY_USERS: usize = 8;
-const PAY_STEP_MS: u64 = 6;
+const PAY_STEP_MS: u64 = 25;
 const SPAM_LEAD: Duration = Duration::from_millis(200);
 const SPAM_TAIL: Duration = Duration::from_millis(800);
 

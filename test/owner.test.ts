@@ -76,6 +76,14 @@ test("a waiter who wins on a sweep is synced before it hears", async () => {
   expect(order).toEqual(["sync", "reply"]);
 });
 
+test("paying takes the seat out of the lease map at once", () => {
+  const { seats } = createOwner(["seat-1"], hold, noJournal, limiter, 8);
+  seats.claim("seat-1", 1n, Date.now(), true);
+  expect(seats.pay("seat-1", 1n)).toBe("paid");
+  expect(seats.release("seat-1", 1n)).toBe(false);
+  expect(seats.heartbeat("seat-1", 1n)).toBe(false);
+});
+
 test("waiters are served first come, first served", async () => {
   const { seats } = createOwner(["seat-1"], hold, noJournal, limiter, 8);
   seats.claim("seat-1", 1n, Date.now(), true);

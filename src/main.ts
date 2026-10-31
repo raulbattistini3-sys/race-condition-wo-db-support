@@ -20,7 +20,7 @@ export function runMain() {
     createLimiter(createSharedState(), { capacity: config.rateCapacity, perSecond: config.ratePerSecond }),
     config.queueCapacity,
   );
-  const restored = 0;
+  const restored = entries.filter(([seat, hash]) => owner.seats.restore(seat, hash)).length;
   console.log(`restored ${restored} confirmed seats`);
   const sweeper = setInterval(() => owner.sweep(), SWEEP_INTERVAL_MS);
   const workers = new Map<number, Worker>();
