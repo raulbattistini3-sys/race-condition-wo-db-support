@@ -1,0 +1,43 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+section {
+  border-top: 1px solid currentColor;
+  padding: 8px 0 16px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button,
+input {
+  font: inherit;
+  padding: 6px 10px;
+}
+
+output {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+#log {
+  font-family: ui-monospace, monospace;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}

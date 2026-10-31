@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seat Race</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Seat race</h1>
+
+    <section>
+      <h2>Session</h2>
+      <form id="login">
+        <label>Name <input name="name" autocomplete="off" required></label>
+        <button>Sign in</button>
+      </form>
+      <p>Signed in as: <output id="user">nobody</output></p>
+      <p>Session idle timeout: <output id="session-left">-</output></p>
+      <button id="logout" type="button">Sign out</button>
+    </section>
+
+    <section>
+      <h2>Seat</h2>
+      <label>Seat id <input id="seat" value="seat-1" autocomplete="off"></label>
+      <p>State: <output id="seat-state">-</output></p>
+      <p>Hold expires in: <output id="hold-left">-</output></p>
+      <div class="row">
+        <button id="reserve" type="button">Reserve</button>
+        <button id="wait" type="button">Reserve or wait 30s</button>
+        <button id="hold" type="button">Hold (lease)</button>
+        <button id="pay" type="button">Pay (stub)</button>
+        <button id="release" type="button">Release</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Attack playground</h2>
+      <p>Each button sends a hostile request. The expected status is on the button.</p>
+      <div class="row" id="attacks"></div>
+    </section>
+
+    <section>
+      <h2>Log</h2>
+      <ol id="log"></ol>
+    </section>
+  </main>
+</body>
+</html>
